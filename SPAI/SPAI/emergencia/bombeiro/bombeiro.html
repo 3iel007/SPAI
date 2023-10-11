@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamada de Ambulância</title>
+    <link rel="stylesheet" type="text/css" href="bombeiro.css">
+</head>
+<body>
+    <h1>Chamada de Ambulância</h1>
+    <form id="ambulanceForm" action="chamar_ambulancia.php" method="post">
+        <label for="numeroEmergencia">Número de Emergência: 193</label>
+        <input type="tel" id="numeroEmergencia" name="numeroEmergencia" required>
+        <br><br>
+
+        <label for="nomeUnidade">Nome da Unidade Próxima: </label>
+        <input type="text" id="nomeUnidade" name="nomeUnidade" required>
+        <br><br>
+
+        <label>Motivo da Chamada:</label><br>
+        <input type="radio" id="acidente" name="motivo" value="Acidente">
+        <label for="acidente">Acidente</label><br>
+
+        <input type="radio" id="doenca" name="motivo" value="Doença">
+        <label for="doenca">Doença</label><br>
+
+        <input type="radio" id="outro" name="motivo" value="Outro">
+        <label for="outro">Outro</label><br>
+        <br>
+
+        <button type="submit">Confirmar Chamada</button>
+    </form>
+
+    <a href="#" id="resetForm">Voltar ao Início</a>
+
+    <script>
+        document.getElementById("resetForm").addEventListener("click", function () {
+            document.getElementById("ambulanceForm").reset();
+        });
+    </script>
+</body>
+</html>
