@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Open+Sans:wght@300;400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+abbr {
+color: #AB6517;
+
+}
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #AB6517;
+}
+body {
+    background-color: #d8882d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #f9a826;
+    padding: 13px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(238, 117, 117, 0.1);
+}
+.question-mark {
+    cursor: pointer;
+    margin-left: 1px;
+    font-size: 1rem;
+    color: #f5b120;
+}
+
+/* Style the tooltip */
+.tooltip .info {
+    display: none;
+    position: absolute;
+    background-color: #fde3a7;
+    border: 1px solid #AB6517;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+    font-size: 0.8em;
+    color: #000;
+}
+
+.info:hover {
+    display: block;
+}
+.tooltip > label:hover ~ .info {
+    display: block;
+}
+.container {
+    width: 80%;
+    height: 85vh;
+    display: flex;
+    box-shadow: 5px 5px 10px #00000036;
+}
+
+.form-image {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fde3a7d7;
+    background-image: url('../img/undraw_mobile_login_re_9ntv.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 1rem;
+}
+
+.form {
+    flex: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeeeee;
+    padding: 2rem 1rem;
+}
+form {
+    overflow-y: auto;
+}
+
+.form-header {
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-header h1 {
+    position: relative;
+}
+
+.form-header h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #AB6517;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.form-header button {
+    border: none;
+    background-color: #AB6517;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s ease;
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+}
+
+.form-header button:hover {
+    background-color: #f9a826;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+    gap: 5px;
+}
+
+.input-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.input-box input {
+    margin: 0.4rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 0.8rem;
+}
+
+.input-box input:hover {
+    background-color: #eeeeee75;
+}
+
+.input-box input:focus-visible {
+    background-color: #fde3a7d7;
+    outline: 1px solid;
+}
+
+.info {
+    display: none;
+    font-size: 0.8em;
+    color: #777;
+  }
+  
+
+.input-box input::placeholder {
+    color: #000000be;
+}
+
+form > button {
+    width: 100%;
+    margin-top: 2rem;
+    border: none;
+    background-color: #AB6517;
+    padding: 0.62rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+form > button:hover {
+    background-color: #f9a826;
+}
+
+form > button a {
+    text-decoration: none;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.response-p {
+    margin: 1em 0;
+}
+.visible {
+    display: inline-block;
+}
+
+@media screen and (max-width: 1200px) {
+    
+    .container {
+        width: 90%;
+    }
+
+    .form-image {
+        flex: 30%
+    }
+
+    .form {
+        flex: 70%;
+        padding: 3rem 2rem;
+    }
+    
+}
+
+@media screen and (max-width: 900px) {
+    
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    /* Ajuste do tamanho do formulário */
+    .form {
+        flex: 100%;
+        padding: 1rem;
+    }
+    
+    /* Ajuste dos elementos de entrada */
+    .input-box input {
+        padding: 0.6rem 1rem;
+    }
+    .form-image {
+        display: none;
+    }
+
+    form {
+        width: 90%;
+        max-width: 550px;
+    }
+
+    .input-group {
+        flex-direction: column;
+        z-index: 5;
+        padding-right: 3rem;
+        flex-wrap: nowrap;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .contaienr {
+        max-height: 85vh;
+        height: auto;
+    }
+    .input-group {
+        padding-right: 0;
+    }
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="conta.css">
+</head>
+
+<body>
+    <div id="container">
+        <a href="../../index.html">
+            <span class="material-symbols-outlined">arrow_back</span>
+        </a>
+        <section>
+            <img src="https://media.licdn.com/dms/image/C5603AQFY4hvNCGkltg/profile-displayphoto-shrink_400_400/0/1629093471093?e=2147483647&v=beta&t=Gwd1iXD7RafRbcI4jP12pBzdWEaLXbnKI6FLjXlmvKc"
+                alt="">
+        </section>
+        <form autocomplete="off">
+            <div class="form-header">
+                <h1 id="titulo">Editar conta</h1>
+            </div>
+
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="name">Nome e Sobrenome</label>
+                    <input id="name" class="nome" type="text" name="name" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="input-box tooltip">
+                    <label for="nameTrusted">Nome de Confiança<span class="question-mark">&#128712;</span></label>
+                    <input id="nameTrusted" class="nometrust" type="text" name="nameTrusted"
+                        placeholder="Digite o nome de confiança" required>
+
+                    <div class="info">
+                        <I>Informe o nome de alguém que você confie.</I>
+                    </div>
+
+                </div>
+
+                <div class="input-box">
+                    <label for="birthdate">Data de nascimento</label>
+                    <input id="birthdate" type="date" name="birthdate" max="" onblur="validarData(this)"
+                        required>
+                </div>
+
+                <div class="input-box">
+                    <label for="email">E-mail</label>
+                    <input id="email" class="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                </div>
+
+                <div class="input-box tooltip">
+                    <label for="emailTrusted">E-mail de confiança<span class="question-mark">&#128712;</span></label>
+                    <input id="emailTrusted" class="emailtrust" type="email" name="emailTrusted"
+                        placeholder="Digite o e-mail de confiança" required>
+
+                    <div class="info">
+                        Informe o e-mail de alguém que você confie.
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <label for="number">Celular</label>
+                    <input id="number" class="cell" type="tel" name="number" placeholder="(xx) xxxxx-xxxx"
+                        oninput="formatarTelefone(this)" required>
+                </div>
+
+                <!-- Add a question mark icon next to the labels -->
+                <div class="input-box tooltip">
+                    <label for="trustedCell">Celular de confiança <span class="question-mark">&#128712;</span></label>
+                    <input id="trustedCell" class="celltrust" type="tel" name="trustedCell"
+                        placeholder="(xx) xxxxx-xxxx" oninput="formatarTelefone(this)" required>
+                    <!-- Add a tooltip element with additional information -->
+                    <div class="info">
+                        Informe o número do celular de alguém que você confie.
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <label for="cpf">CPF</label>
+                    <input id="cpf" class="cpf" type="number" name="cpf" placeholder="Digite seu CPF"
+                        oninput="inputCPF(this, 11)" pattern="\d{11}" title="Digite um CPF válido" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="healthcare">Convênio</label>
+                    <input id="healthcare" class="conven" type="text" name="healthcare"
+                        placeholder="Convênio (opcional)">
+                </div>
+
+                <div class="input-box">
+                    <label for="zipCode">CEP</label>
+                    <input id="zipCode" class="cep" type="number" name="zipCode" placeholder="Digite o CEP"
+                        pattern="\d{8}" title="Digite um CEP válido" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="houseNumber">Número de Residência</label>
+                    <input id="houseNumber" class="numero" type="text" name="houseNumber"
+                        placeholder="Digite o número da residência" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="complement">Complemento</label>
+                    <input id="complement" class="complemento" type="text" name="complement"
+                        placeholder="Complemento (opcional)">
+                </div>
+            </div>
+            <aside>
+                <button id="cancelar" type="button"><a>Cancelar</a></button>
+                <button id="atualizar"><a>Atualizar</a></button>
+            </aside>
+        </form>
+        <main>
+            <section class="data-box">
+                <div class="content-box">
+                    <h3>Nome:</h3>
+                    <p class="nome"></p>
+                </div>
+                <div class="content-box">
+                    <h3>Nome de confiança:</h3>
+                    <p class="nometrust"></p>
+                </div>
+                <div class="content-box">
+                    <h3>Email</h3>
+                    <p class="email"></p>
+                </div>
+                <div class="content-box">
+                    <h3>Email de confiança:</h3>
+                    <p class="emailtrust"></p>
+                </div>
+                <div class="content-box">
+                    <h3>Celular:</h3>
+                    <p class="cell"></p>
+                </div>
+                <div class="content-box">
+                    <h3>Celular de confiança:</h3>
+                    <p class="celltrust"></p>
+                </div>
+                <div class="content-box">
+                    <h3>CPF:</h3>
+                    <p class="cpf"></p>
+                </div>
+                <div class="content-box">
+                    <h3>Convênio:</h3>
+                    <p class="conven"></p>
+                </div>
+                <div class="content-box">
+                    <h3>CEP:</h3>
+                    <p class="cep"></p>
+                </div>
+                <div class="content-box">
+                    <h3>Número da residência:</h3>
+                    <p class="numero"></p>
+                </div>
+                <div class="content-box">
+                    <h3>Complemento:</h3>
+                    <p class="complemento"></p>
+                </div>
+                <div class="content-box">
+                    <h3>Data de nascimento</h3>
+                    <p class="nasc"></p>
+                </div>
+            </section>
+            <section class="button-box">
+                <a href="#titulo"><button id="editar">editar</button></a>
+                <aside>
+                    <button id="sair" type="button">Sair</button>
+                    <button id="excluir" type="button">excluir</button>
+                </aside>
+            </section>
+        </main>
+        <script src="conta.js"></script>
+    </div>
+</body>
+
+</html>

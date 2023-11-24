@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <title>Chamada de 🚑 Ambulância</title>
+    <link rel="stylesheet" type="text/css" href="./styleEmerg.css">
+</head>
+
+<body>
+    <div class="container"></div>
+    <h1>Chamada de 🚑 <span id="call">Ambulância</span></h1>
+    <form id="ambulanceForm" method="post">
+        <label for="numeroEmergencia">Número de Emergência: 192</label>
+        <br>
+
+        <label>Motivo da Chamada:</label><br>
+        <input type="radio" id="acidente" name="motivo" value="Acidente">
+        <label for="acidente">Acidente</label><br>
+
+        <input type="radio" id="doenca" name="motivo" value="Doença">
+        <label for="doenca">Doença</label><br>
+
+        <input type="radio" id="outro" name="motivo" value="Outro">
+        <label for="outro">Outro</label><br>
+        <br>
+
+        <button type="submit" onclick="validateForm(event)">Confirmar Chamada</button>
+    </form>
+
+    <a href="../../index.html" id="resetForm">Voltar ao Início</a>
+
+    <script src="orgao.js"></script>
+</body>
+
+</html>
